@@ -242,7 +242,7 @@ export default function Menu() {
       {/* {(!restaurant?.isTakeAwayEnabled && restaurant?.isDeliveryEnabled) && (
                 <DeliveryCheck setOrderType={setOrderType} />
             )} */}
-      <div className="flex w-full flex-col gap-4 md:w-4/6">
+      <div className={cn("flex w-full flex-col gap-4",cartItems.length > 0 && 'md:w-4/6')}>
         <div
           className="relative hidden h-[30vh] w-full bg-black md:flex"
           style={{
@@ -353,281 +353,289 @@ export default function Menu() {
           </div>
         </div>
       </div>
-      <div className="hidden w-2/6 flex-col md:flex">
-        <div className="sticky top-0 z-10 h-fit overflow-y-visible bg-itembackground px-4 py-2">
-          <div className={cn("scrollbar-none relative flex h-[40vh] flex-col gap-6 overflow-x-auto pb-2",cartItems.length > 0 && "h-[85vh]")}>
-            <p className="flex items-center justify-center gap-1 pt-6 text-base font-normal tracking-[1.8px] text-menusecondary">
-              <ShoppingBag fill="#ccad64" className="text-itembackground" />{" "}
-              <span>
-                {orderType === 2 ? "Delivery" : "Collection"} from{" "}
-                {restaurant?.name}
-              </span>
-            </p>
-            {restaurant?.isDeliveryEnabled &&
-              restaurant.isTakeAwayEnabled &&
-              restaurant?.onlineOrder && (
-                <div className="flex w-full gap-4">
-                  <Button
-                    className={cn(
-                      "w-full rounded-none border border-menuprimary bg-menubackground text-menuprimary hover:border-menuprimary hover:bg-menubackground hover:text-menuprimary",
-                      orderType === 3
-                        ? "rounded-none bg-menuprimary font-bold uppercase text-menuforeground hover:bg-menuprimary hover:text-menuforeground"
-                        : "",
-                    )}
-                    onClick={() => setOrderType(3)}
-                  >
-                    I&apos;ll Collect
-                  </Button>
-                  <DeliveryCheck setOrderType={setOrderType}>
+      {cartItems.length > 0 && (
+        <div className="hidden w-2/6 flex-col md:flex">
+          <div className="sticky top-0 z-10 h-fit overflow-y-visible bg-itembackground px-4 py-2">
+            <div
+              className={cn(
+                "scrollbar-none relative flex h-[40vh] flex-col gap-6 overflow-x-auto pb-2",
+                cartItems.length > 0 && "h-[85vh]",
+              )}
+            >
+              <p className="flex items-center justify-center gap-1 pt-6 text-base font-normal tracking-[1.8px] text-menusecondary">
+                <ShoppingBag fill="#ccad64" className="text-itembackground" />{" "}
+                <span>
+                  {orderType === 2 ? "Delivery" : "Collection"} from{" "}
+                  {restaurant?.name}
+                </span>
+              </p>
+              {restaurant?.isDeliveryEnabled &&
+                restaurant.isTakeAwayEnabled &&
+                restaurant?.onlineOrder && (
+                  <div className="flex w-full gap-4">
                     <Button
                       className={cn(
                         "w-full rounded-none border border-menuprimary bg-menubackground text-menuprimary hover:border-menuprimary hover:bg-menubackground hover:text-menuprimary",
-                        orderType === 2
+                        orderType === 3
                           ? "rounded-none bg-menuprimary font-bold uppercase text-menuforeground hover:bg-menuprimary hover:text-menuforeground"
                           : "",
                       )}
-                      // onClick={() => setOrderType(2)}
+                      onClick={() => setOrderType(3)}
                     >
-                      Delivery
+                      I&apos;ll Collect
                     </Button>
-                  </DeliveryCheck>
-                </div>
-              )}
-            <Button
-              className="relative flex w-full items-center justify-between rounded-none bg-menuprimary py-6 font-manrope text-lg font-bold uppercase text-menuforeground hover:bg-buttonhover disabled:bg-buttondisabled disabled:text-menuforeground"
-              onClick={() => router.push("/checkout")}
-              disabled={
-                cartItems.length === 0 ||
-                !restaurant?.onlineOrder ||
-                (!restaurant?.isDeliveryEnabled &&
-                  !restaurant.isTakeAwayEnabled)
-              }
-            >
-              <Link href="/checkout">
-                <span className="absolute -top-2 left-4">
-                  <Triangle
-                    fill="#ccad64"
-                    className="rotate-180 text-menuprimary-foreground"
-                  />
-                </span>
-                <span className="font-bold">CHECKOUT</span>{" "}
-                <span>
-                  {"£"} {formattedItemPrice(totalAmount)}
-                </span>
-              </Link>
-            </Button>
-            {/* Separator */}
-            <div className="h-[1px] w-full rounded-full bg-menuprimary"></div>
-
-            <div className="hidden-scrollbar mb-6 flex max-h-[360px] w-full flex-col gap-4 overflow-y-scroll">
-              {cartItems.length !== 0 ? (
-                <div className="flex w-full flex-col">
-                  {reversedCartItems.map((item, index) => {
-                    const menuitem = items.find(
-                      (i) => i._id === item._idMenuItem,
-                    );
-                    return (
-                      <div
-                        className="flex w-full flex-col items-start justify-start gap-3 border-b-[0.3px] border-b-menuprimary px-3 py-5"
-                        key={index}
+                    <DeliveryCheck setOrderType={setOrderType}>
+                      <Button
+                        className={cn(
+                          "w-full rounded-none border border-menuprimary bg-menubackground text-menuprimary hover:border-menuprimary hover:bg-menubackground hover:text-menuprimary",
+                          orderType === 2
+                            ? "rounded-none bg-menuprimary font-bold uppercase text-menuforeground hover:bg-menuprimary hover:text-menuforeground"
+                            : "",
+                        )}
+                        // onClick={() => setOrderType(2)}
                       >
-                        <div className="flex w-full items-center justify-between">
-                          <div className="flex w-3/4 flex-col items-start justify-start gap-1">
-                            <p className="text-lg font-[700] tracking-[1.8px] text-menusecondary">
-                              {item?.quantity}&nbsp;&nbsp;{item.name}
-                            </p>
-                          </div>
-                          {menuitem?.price.value
-                            ? menuitem?.price.value > 0 && (
-                                <p className="font-[700] text-menuprimary">
-                                  {menuitem &&
-                                  menuitem.takeawayPrice.value > 0 ? (
-                                    <>
-                                      {getCurrencySymbol(
-                                        menuitem.takeawayPrice.currency,
-                                      )}{" "}
-                                      {formattedItemPrice(
-                                        menuitem.takeawayPrice.value,
-                                      )}
-                                    </>
-                                  ) : (
-                                    <>
-                                      {menuitem && menuitem.price.value > 0 ? (
-                                        <>
-                                          {getCurrencySymbol(
-                                            menuitem.price.currency,
-                                          )}{" "}
-                                          {formattedItemPrice(
-                                            menuitem.price.value,
-                                          )}
-                                        </>
-                                      ) : (
-                                        <>
-                                          {menuitem &&
-                                          menuitem.modifiers.length === 0 ? (
-                                            <>Free</>
-                                          ) : (
-                                            menuitem?.modifiers.map(
-                                              (mod, index) =>
-                                                GetModifiersFromItemId(
-                                                  menuitem,
-                                                  items,
-                                                  index,
-                                                ).map((modifier) => {
-                                                  if (
-                                                    modifier._id ===
-                                                    item.modifiers.find(
-                                                      (modifier) =>
-                                                        modifier.defaultSelection,
-                                                    )?.defaultSelection
-                                                  ) {
-                                                    return `${getCurrencySymbol(modifier.price.currency)} ${formattedItemPrice(modifier.price.value)}`;
-                                                  }
-                                                }),
-                                            )
-                                          )}
-                                        </>
-                                      )}
-                                    </>
-                                  )}
-                                </p>
-                              )
-                            : ""}
-                        </div>
+                        Delivery
+                      </Button>
+                    </DeliveryCheck>
+                  </div>
+                )}
+              <Button
+                className="relative flex w-full items-center justify-between rounded-none bg-menuprimary py-6 font-manrope text-lg font-bold uppercase text-menuforeground hover:bg-buttonhover disabled:bg-buttondisabled disabled:text-menuforeground"
+                onClick={() => router.push("/checkout")}
+                disabled={
+                  cartItems.length === 0 ||
+                  !restaurant?.onlineOrder ||
+                  (!restaurant?.isDeliveryEnabled &&
+                    !restaurant.isTakeAwayEnabled)
+                }
+              >
+                <Link href="/checkout">
+                  <span className="absolute -top-2 left-4">
+                    <Triangle
+                      fill="#ccad64"
+                      className="rotate-180 text-menuprimary-foreground"
+                    />
+                  </span>
+                  <span className="font-bold">CHECKOUT</span>{" "}
+                  <span>
+                    {"£"} {formattedItemPrice(totalAmount)}
+                  </span>
+                </Link>
+              </Button>
+              {/* Separator */}
+              <div className="h-[1px] w-full rounded-full bg-menuprimary"></div>
 
-                        <div className="flex w-full flex-col items-center justify-between gap-2 pl-3">
-                          {Object.entries(
-                            item.modifiers.reduce(
-                              (acc, modifier) => {
-                                const name = items.find(
-                                  (i) => i._id === modifier._idMenuItem,
-                                )?.name;
-                                if (name) {
-                                  if (!acc[name]) {
-                                    acc[name] = { ...modifier, count: 0 };
-                                  }
-                                  acc[name].count += 1;
-                                }
-                                return acc;
-                              },
-                              {} as Record<
-                                string,
-                                (typeof item.modifiers)[0] & { count: number }
-                              >,
-                            ),
-                          ).map(([name, modifier], index) => (
-                            <div
-                              className="flex w-full items-center justify-between"
-                              key={index}
-                            >
-                              <p className="w-[80%] text-sm font-[300] tracking-[1.4px] text-menusecondary">
-                                {modifier.count}&nbsp;&nbsp;{name}
+              <div className="hidden-scrollbar mb-6 flex max-h-[360px] w-full flex-col gap-4 overflow-y-scroll">
+                {cartItems.length !== 0 ? (
+                  <div className="flex w-full flex-col">
+                    {reversedCartItems.map((item, index) => {
+                      const menuitem = items.find(
+                        (i) => i._id === item._idMenuItem,
+                      );
+                      return (
+                        <div
+                          className="flex w-full flex-col items-start justify-start gap-3 border-b-[0.3px] border-b-menuprimary px-3 py-5"
+                          key={index}
+                        >
+                          <div className="flex w-full items-center justify-between">
+                            <div className="flex w-3/4 flex-col items-start justify-start gap-1">
+                              <p className="text-lg font-[700] tracking-[1.8px] text-menusecondary">
+                                {item?.quantity}&nbsp;&nbsp;{item.name}
                               </p>
-                              {modifier.price.value > 0 ? (
-                                <p className="text-sm font-[700] text-menuprimary">
-                                  {getCurrencySymbol(modifier.price.currency)}{" "}
-                                  {formattedItemPrice(modifier.price.value)}
-                                </p>
-                              ) : (
-                                ""
-                              )}
                             </div>
-                          ))}
-                        </div>
-                        <p className="w-full text-sm font-[300] tracking-[1.4px] text-menusecondary">
-                          {item.notes && (
-                            <span className="border-b-[1px] border-b-menusecondary">
-                              Instructions
-                            </span>
-                          )}
-                          <br />
-                          {item.notes}
-                        </p>
-                        <div className="flex w-full items-center justify-between pt-6">
-                          <Link
-                            href={`/cart/${index}`}
-                            className="font-[400] capitalize text-menuprimary underline"
-                          >
-                            Edit Item
-                          </Link>
-                          <div className="flex items-center justify-center gap-2">
-                            <CartDeletePopup item={item}>
-                              <button className="transition-all duration-150 ease-out hover:scale-[1.2]">
-                                <Trash2 className="text-menusecondary" />
-                              </button>
-                            </CartDeletePopup>
-                            <button
-                              className="transition-all duration-150 ease-out hover:scale-[1.2]"
-                              onClick={() => {
-                                if (item.quantity <= 1) {
-                                  return removeItem(
-                                    item._idMenuItem,
-                                    item.modifiers,
+                            {menuitem?.price.value
+                              ? menuitem?.price.value > 0 && (
+                                  <p className="font-[700] text-menuprimary">
+                                    {menuitem &&
+                                    menuitem.takeawayPrice.value > 0 ? (
+                                      <>
+                                        {getCurrencySymbol(
+                                          menuitem.takeawayPrice.currency,
+                                        )}{" "}
+                                        {formattedItemPrice(
+                                          menuitem.takeawayPrice.value,
+                                        )}
+                                      </>
+                                    ) : (
+                                      <>
+                                        {menuitem &&
+                                        menuitem.price.value > 0 ? (
+                                          <>
+                                            {getCurrencySymbol(
+                                              menuitem.price.currency,
+                                            )}{" "}
+                                            {formattedItemPrice(
+                                              menuitem.price.value,
+                                            )}
+                                          </>
+                                        ) : (
+                                          <>
+                                            {menuitem &&
+                                            menuitem.modifiers.length === 0 ? (
+                                              <>Free</>
+                                            ) : (
+                                              menuitem?.modifiers.map(
+                                                (mod, index) =>
+                                                  GetModifiersFromItemId(
+                                                    menuitem,
+                                                    items,
+                                                    index,
+                                                  ).map((modifier) => {
+                                                    if (
+                                                      modifier._id ===
+                                                      item.modifiers.find(
+                                                        (modifier) =>
+                                                          modifier.defaultSelection,
+                                                      )?.defaultSelection
+                                                    ) {
+                                                      return `${getCurrencySymbol(modifier.price.currency)} ${formattedItemPrice(modifier.price.value)}`;
+                                                    }
+                                                  }),
+                                              )
+                                            )}
+                                          </>
+                                        )}
+                                      </>
+                                    )}
+                                  </p>
+                                )
+                              : ""}
+                          </div>
+
+                          <div className="flex w-full flex-col items-center justify-between gap-2 pl-3">
+                            {Object.entries(
+                              item.modifiers.reduce(
+                                (acc, modifier) => {
+                                  const name = items.find(
+                                    (i) => i._id === modifier._idMenuItem,
+                                  )?.name;
+                                  if (name) {
+                                    if (!acc[name]) {
+                                      acc[name] = { ...modifier, count: 0 };
+                                    }
+                                    acc[name].count += 1;
+                                  }
+                                  return acc;
+                                },
+                                {} as Record<
+                                  string,
+                                  (typeof item.modifiers)[0] & { count: number }
+                                >,
+                              ),
+                            ).map(([name, modifier], index) => (
+                              <div
+                                className="flex w-full items-center justify-between"
+                                key={index}
+                              >
+                                <p className="w-[80%] text-sm font-[300] tracking-[1.4px] text-menusecondary">
+                                  {modifier.count}&nbsp;&nbsp;{name}
+                                </p>
+                                {modifier.price.value > 0 ? (
+                                  <p className="text-sm font-[700] text-menuprimary">
+                                    {getCurrencySymbol(modifier.price.currency)}{" "}
+                                    {formattedItemPrice(modifier.price.value)}
+                                  </p>
+                                ) : (
+                                  ""
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                          <p className="w-full text-sm font-[300] tracking-[1.4px] text-menusecondary">
+                            {item.notes && (
+                              <span className="border-b-[1px] border-b-menusecondary">
+                                Instructions
+                              </span>
+                            )}
+                            <br />
+                            {item.notes}
+                          </p>
+                          <div className="flex w-full items-center justify-between pt-6">
+                            <Link
+                              href={`/cart/${index}`}
+                              className="font-[400] capitalize text-menuprimary underline"
+                            >
+                              Edit Item
+                            </Link>
+                            <div className="flex items-center justify-center gap-2">
+                              <CartDeletePopup item={item}>
+                                <button className="transition-all duration-150 ease-out hover:scale-[1.2]">
+                                  <Trash2 className="text-menusecondary" />
+                                </button>
+                              </CartDeletePopup>
+                              <button
+                                className="transition-all duration-150 ease-out hover:scale-[1.2]"
+                                onClick={() => {
+                                  if (item.quantity <= 1) {
+                                    return removeItem(
+                                      item._idMenuItem,
+                                      item.modifiers,
+                                    );
+                                  }
+                                  updateItem(
+                                    {
+                                      ...item,
+                                      price: {
+                                        ...item.price,
+                                        value:
+                                          item.price.value -
+                                          item.price.value / item.quantity,
+                                      },
+                                      quantity: item.quantity - 1,
+                                    },
+                                    index,
                                   );
-                                }
-                                updateItem(
-                                  {
-                                    ...item,
-                                    price: {
-                                      ...item.price,
-                                      value:
-                                        item.price.value -
-                                        item.price.value / item.quantity,
+                                }}
+                              >
+                                <CircleMinus className="text-menusecondary" />
+                              </button>
+                              <p className="text-2xl font-[500] text-menuprimary">
+                                {item.quantity}
+                              </p>
+                              <button
+                                className="transition-all duration-150 ease-out hover:scale-[1.2]"
+                                onClick={() => {
+                                  updateItem(
+                                    {
+                                      ...item,
+                                      price: {
+                                        ...item.price,
+                                        value:
+                                          item.price.value +
+                                          item.price.value / item.quantity,
+                                      },
+                                      quantity: item.quantity + 1,
                                     },
-                                    quantity: item.quantity - 1,
-                                  },
-                                  index,
-                                );
-                              }}
-                            >
-                              <CircleMinus className="text-menusecondary" />
-                            </button>
-                            <p className="text-2xl font-[500] text-menuprimary">
-                              {item.quantity}
-                            </p>
-                            <button
-                              className="transition-all duration-150 ease-out hover:scale-[1.2]"
-                              onClick={() => {
-                                updateItem(
-                                  {
-                                    ...item,
-                                    price: {
-                                      ...item.price,
-                                      value:
-                                        item.price.value +
-                                        item.price.value / item.quantity,
-                                    },
-                                    quantity: item.quantity + 1,
-                                  },
-                                  index,
-                                );
-                              }}
-                            >
-                              <CirclePlus className="text-menusecondary" />
-                            </button>
+                                    index,
+                                  );
+                                }}
+                              >
+                                <CirclePlus className="text-menusecondary" />
+                              </button>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              ) : (
-                <p className="w-full text-center text-menusecondary">
-                  Your cart is empty! Add items to proceed
-                </p>
-              )}
-            </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <p className="w-full text-center text-menusecondary">
+                    Your cart is empty! Add items to proceed
+                  </p>
+                )}
+              </div>
 
-            {/* Footer */}
-            <div className="absolute bottom-0 left-0 z-30 flex w-full items-center justify-between bg-itembackground">
-              <p className="font-bold text-menuprimary">Subtotal</p>
-              <p className="text-lg font-bold text-menuprimary">
-                {"£"} {formattedItemPrice(totalAmount)}
-              </p>
+              {/* Footer */}
+              <div className="absolute bottom-0 left-0 z-30 flex w-full items-center justify-between bg-itembackground">
+                <p className="font-bold text-menuprimary">Subtotal</p>
+                <p className="text-lg font-bold text-menuprimary">
+                  {"£"} {formattedItemPrice(totalAmount)}
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </section>
   );
 }

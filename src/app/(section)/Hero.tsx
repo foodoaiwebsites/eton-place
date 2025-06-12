@@ -14,7 +14,6 @@ const Hero: React.FC = () => {
         <source src="https://d8q1b3smcycac.cloudfront.net/etonpalace-web.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className="absolute inset-0 bg-black/60" />
     </section>
   );
 };

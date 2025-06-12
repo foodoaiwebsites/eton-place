@@ -6,8 +6,6 @@ export const dynamic = "force-dynamic"; // defaults to auto
 
 interface PlaceDetailsResponse {
   reviews: Review[];
-  // result: {
-  // };
   status: string;
 }
 
@@ -36,8 +34,6 @@ export async function GET() {
     const reviews = response.data.reviews || [];
     return NextResponse.json(reviews, { status: 200 });
   } catch (error) {
-    console.log(error,"===erroro");
-    
     return NextResponse.json(
       {
         error: "An error occurred while fetching reviews",
