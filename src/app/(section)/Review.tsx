@@ -15,13 +15,8 @@ const Reviews = ({}) => {
   const { reviews } = useRestaurant();
   return (
     <section className="relative flex h-full w-full justify-center bg-[#000] pb-8 md:px-0 lg:pb-0">
-      <div className="lines z-0">
-        <div className="line"></div>
-        <div className="line"></div>
-        <div className="line"></div>
-      </div>
-
-      <div className="absolute inset-0 z-0 flex items-center justify-center">
+     
+      {/* <div className="absolute inset-0 z-0 flex items-center justify-center">
         <Image
           src={"/images/home/story/bg2.png"}
           width={281}
@@ -29,7 +24,7 @@ const Reviews = ({}) => {
           alt="logo"
           className="h-full w-full object-cover"
         />
-      </div>
+      </div> */}
       <div className="flex h-full w-full flex-col items-start justify-center gap-4 py-12 md:gap-8 md:py-44 md:pt-24">
         <div className="flex h-full w-full flex-col items-center justify-center gap-2 lg:gap-4">
           <div className="flex flex-col items-center justify-center gap-2 md:mr-[23%]">
