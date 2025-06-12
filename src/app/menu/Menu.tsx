@@ -251,12 +251,12 @@ export default function Menu() {
           }}
         >
           <div className="absolute left-0 top-0 flex h-full w-full items-end justify-end px-12 py-12">
-            <Link href="/pdf/main-menu.pdf" target="_blank">
+            {/* <Link href="/pdf/main-menu.pdf" target="_blank">
               <Button className="flex items-center justify-center gap-2 rounded-none bg-menuprimary px-5 py-6 text-lg font-[600] text-menuforeground hover:bg-buttonhover">
                 <Image src="/images/pdf.svg" width={23} height={29} alt="pdf" />
                 <span className="leading-none">Download Menu</span>
               </Button>
-            </Link>
+            </Link> */}
           </div>
         </div>
         {/* Categories */}
@@ -355,7 +355,7 @@ export default function Menu() {
       </div>
       <div className="hidden w-2/6 flex-col md:flex">
         <div className="sticky top-0 z-10 h-fit overflow-y-visible bg-itembackground px-4 py-2">
-          <div className="scrollbar-none relative flex h-[85vh] flex-col gap-6 overflow-x-auto pb-2">
+          <div className={cn("scrollbar-none relative flex h-[40vh] flex-col gap-6 overflow-x-auto pb-2",cartItems.length > 0 && "h-[85vh]")}>
             <p className="flex items-center justify-center gap-1 pt-6 text-base font-normal tracking-[1.8px] text-menusecondary">
               <ShoppingBag fill="#ccad64" className="text-itembackground" />{" "}
               <span>

@@ -26,28 +26,29 @@ const BavetteStory = ({}) => {
           </div>
           <div className="flex h-full w-full flex-col items-center gap-[2.5rem] p-6 md:w-1/2 md:items-start lg:ml-24">
             <h1 className="max-w-[500px] text-center font-times_new_roman text-5xl text-[#fff] md:text-start md:text-7xl">
-              From Passion
+              Crafted with Heart
               <br />
-              to Perfection
+              Inspired by Tradition
             </h1>
             <p className="max-w-[450px] text-center font-poppins font-light leading-[160%] text-[#9C9E9F] md:text-start">
-              What began as a vision to bring authentic Mediterranean and
-              Turkish flavours to Liverpool has grown into Eton Place — a
-              cherished dining destination where tradition meets elegance. Born
-              from a deep passion for culinary heritage, Eton Place was created
-              to offer more than just meals — to craft experiences that linger
-              in memory. <br />
+              Eton Place was born from a love for Mediterranean and Turkish
+              cuisine — a vision to bring the warmth, depth, and authenticity of
+              these flavors to the heart of Liverpool. What started as a humble
+              dream has flourished into a refined destination where each guest
+              is treated to more than just a meal.
               <br />
-              From modest beginnings to becoming a trusted name among food
-              lovers, our journey has always been guided by a commitment to
-              quality, creativity, and heartfelt hospitality. Each ingredient is
-              carefully sourced, every dish is prepared with precision, and
-              every bite reflects our dedication to excellence. <br />
               <br />
-              At Eton Place, we don’t simply serve food — we create moments. As
-              we continue to grow, our mission remains the same: to blend
-              authenticity and innovation in a way that leaves a lasting
-              impression on every guest.
+              Our philosophy is simple: food should nourish the soul. From
+              hand-picked ingredients to carefully curated recipes, every plate
+              tells a story — of culture, of passion, of care. We believe in
+              creating not just delicious dishes, but memorable experiences that
+              bring people together.
+              <br />
+              <br />
+              As we continue our journey, our promise is to stay true to our
+              roots while embracing creativity — delivering moments of joy, one
+              dish at a time. At Eton Place, every visit is a celebration of
+              flavor, tradition, and the art of genuine hospitality.
             </p>
           </div>
         </div>

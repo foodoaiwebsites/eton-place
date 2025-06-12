@@ -70,7 +70,7 @@ const Follow: React.FC = () => {
                   target="_blank"
                   className="text-md text-center font-open_sans font-[400] uppercase text-[#E2B583] md:text-xl"
                 >
-                  @rokabolton
+                  @etonplace
                 </Link>
               </div>
             </motion.div>
