@@ -161,15 +161,13 @@ const Reviews = () => {
                     return (
                       <CarouselItem
                         key={index}
-                        className={`ml-4 w-full basis-full gap-6 rounded-none p-4 md:ml-0 md:basis-1/3 md:p-8 ${
+                        className={`ml-4 w-full basis-full gap-6 rounded-none p-4 md:ml-0 md:p-8 ${
                           index % 2 === 0 ? "bg-[#000]" : "bg-[#000]"
                         }`}
                       >
                         <div
                           className={`flex h-auto flex-col gap-6 border px-6 py-8 ${
-                            index % 2 === 0
-                              ? "border-[#CDAE64]"
-                              : "border-[#CDAE64]"
+                            index % 2 === 0 ? "border-none" : "border-none"
                           }`}
                         >
                           <div className="mt-8 flex w-full justify-center">
@@ -183,9 +181,9 @@ const Reviews = () => {
                             )}
                           </div>
 
-                          <div className="flex flex-col gap-4">
+                          <div className="flex flex-col items-center justify-center gap-4">
                             <p
-                              className={`font-cormorant text-center text-sm font-[500] md:px-4 lg:leading-[120%] ${
+                              className={`font-cormorant max-w-[700px] text-center text-sm font-[500] md:px-4 lg:leading-[120%] ${
                                 index % 2 === 0
                                   ? "text-[#CDAE64]"
                                   : "text-[#CDAE64]"
@@ -243,7 +241,7 @@ const Reviews = () => {
                   })}
               </CarouselContent>
 
-              <div className="group absolute -bottom-12 left-1/2 flex w-fit -translate-x-1/2 transform items-center gap-2 transition-transform duration-300 ease-in-out">
+              <div className="group absolute bottom-0 left-1/2 flex w-fit -translate-x-1/2 transform items-center gap-2 transition-transform duration-300 ease-in-out">
                 <CarouselPrevious className="border-[#CDAE64] text-[#CDAE64] transition-transform duration-300 ease-in-out group-hover:-translate-x-2" />
                 <CarouselNext className="border-[#CDAE64] text-[#CDAE64] transition-transform duration-300 ease-in-out group-hover:translate-x-2" />
               </div>
