@@ -36,7 +36,7 @@ const textVariants = {
 const Reserve: React.FC = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.4,
   });
 

@@ -61,7 +61,7 @@ const Menu: React.FC = () => {
                   className="relative z-10 h-[200px] w-full object-cover md:h-[500px]"
                   initial={{ opacity: 0, y: 50, scale: 0.8 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: false, amount: 0.5 }}
+                  viewport={{ once: true, amount: 0.5 }}
                   transition={{ duration: 1.5, ease: "easeOut" }}
                 />
               </Link>
@@ -85,10 +85,10 @@ const Menu: React.FC = () => {
           className="z-40 flex flex-col items-center justify-center gap-6 text-center"
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
-          <p className="z-40 max-w-[600px] font-inter text-sm font-[400] text-[#7E6C53] md:text-base">
+          <p className="z-40 max-w-[600px] text-start font-inter text-sm font-[400] text-[#C1B6A6] md:text-base">
             Eton Place is Liverpool’s longest-established Turkish restaurant,
             proudly serving since 1997. We offer a warm, cosy atmosphere and a
             menu inspired by Mediterranean, European, and Turkish flavours. From

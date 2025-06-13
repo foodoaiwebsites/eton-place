@@ -22,11 +22,16 @@ import toast from "react-hot-toast";
 import { z } from "zod";
 
 const FormValidation = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Invalid email address." }),
-  phone: z
+  name: z
     .string()
-    .min(10, { message: "Phone number must be at least 10 digits." }),
+    .min(2, { message: "Name must be at least 2 characters." })
+    .regex(/^[a-zA-Z\s]+$/, {
+      message: "Name must contain only letters and spaces.",
+    }),
+  email: z.string().email({ message: "Invalid email address." }),
+  phone: z.string().regex(/^\d{11}$/, {
+    message: "Phone number must be exactly 11 digits and contain only numbers.",
+  }),
   reason: z.string(),
   message: z.string(),
 });
@@ -168,7 +173,7 @@ const Contact = ({}) => {
                               <Input
                                 placeholder="First Name"
                                 {...field}
-                                className="h-12 rounded-xl text-white bg-[#252424] placeholder:text-[#fff]"
+                                className="h-12 rounded-xl bg-[#252424] text-white placeholder:text-[#fff]"
                               />
                             </FormControl>
                             <FormMessage />
@@ -184,7 +189,7 @@ const Contact = ({}) => {
                               <Input
                                 placeholder="Phone"
                                 {...field}
-                                className="h-12 rounded-xl text-white bg-[#252424] placeholder:text-[#fff]"
+                                className="h-12 rounded-xl bg-[#252424] text-white placeholder:text-[#fff]"
                               />
                             </FormControl>
                             <FormMessage />
@@ -200,7 +205,7 @@ const Contact = ({}) => {
                               <Input
                                 placeholder="Email"
                                 {...field}
-                                className="h-12 rounded-xl text-white bg-[#252424] placeholder:text-[#fff]"
+                                className="h-12 rounded-xl bg-[#252424] text-white placeholder:text-[#fff]"
                               />
                             </FormControl>
                             <FormMessage />
@@ -219,7 +224,7 @@ const Contact = ({}) => {
                               <Textarea
                                 placeholder="Your Message"
                                 {...field}
-                                className="h-32 rounded-xl text-white bg-[#252424] placeholder:text-[#fff]"
+                                className="h-32 rounded-xl bg-[#252424] text-white placeholder:text-[#fff]"
                               />
                             </FormControl>
                             <FormMessage />

@@ -25,7 +25,7 @@ const BavetteStory = ({}) => {
             />
           </div>
           <div className="flex h-full w-full flex-col items-center gap-[2.5rem] p-6 md:w-1/2 md:items-start lg:ml-24">
-            <h1 className="max-w-[500px] text-center font-times_new_roman text-5xl text-[#fff] md:text-start md:text-7xl">
+            <h1 className="max-w-[500px] text-center font-oswald text-4xl text-[#fff] md:text-start md:text-7xl">
               Crafted with Heart
               <br />
               Inspired by Tradition

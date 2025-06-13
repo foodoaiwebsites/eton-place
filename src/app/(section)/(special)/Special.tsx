@@ -11,7 +11,7 @@ const Special = ({}) => {
   const { modelData } = useRestaurant();
   return (
     <section className="relative flex h-full w-full justify-center overflow-hidden bg-[#000] pt-12">
-      <div className="absolute inset-0 z-0 flex items-center justify-center">
+      {/* <div className="absolute inset-0 z-0 flex items-center justify-center">
         <Image
           src={"/images/home/hero/bg.png"}
           width={281}
@@ -19,7 +19,7 @@ const Special = ({}) => {
           alt="logo"
           className="h-full w-full object-cover"
         />
-      </div>
+      </div> */}
       {/* Animated Vertical Lines */}
       <div className="lines">
         <div className="line"></div>

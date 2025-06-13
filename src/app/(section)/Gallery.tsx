@@ -32,7 +32,7 @@ const Gallery: React.FC = () => {
               className="z-50 h-[200px] w-full object-cover md:h-[400px]"
               initial={{ opacity: 0, y: 50, scale: 0.8 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
             />
           </div>
@@ -43,7 +43,7 @@ const Gallery: React.FC = () => {
               className="z-50 h-[200px] w-full object-cover md:h-[400px]"
               initial={{ opacity: 0, y: 50, scale: 0.8 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
             />
           </div>
@@ -54,7 +54,7 @@ const Gallery: React.FC = () => {
               className="z-50 h-[200px] w-full object-cover md:h-[400px]"
               initial={{ opacity: 0, y: 50, scale: 0.8 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
             />
           </div>
@@ -65,7 +65,7 @@ const Gallery: React.FC = () => {
               className="z-50 h-[200px] w-full object-cover md:h-[400px]"
               initial={{ opacity: 0, y: 50, scale: 0.8 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
             />
           </div>
@@ -76,7 +76,7 @@ const Gallery: React.FC = () => {
               className="z-50 h-[200px] w-full object-cover md:h-[400px]"
               initial={{ opacity: 0, y: 50, scale: 0.8 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
             />
           </div>
@@ -87,7 +87,7 @@ const Gallery: React.FC = () => {
               className="z-50 h-[200px] w-full object-cover md:h-[400px]"
               initial={{ opacity: 0, y: 50, scale: 0.8 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
             />
           </div>

@@ -72,10 +72,11 @@ const CustomerDetails: FC<CustomerDetailsProps> = ({
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-muted">Your Name</FormLabel>
+              <FormLabel className="text-muted">Name</FormLabel>
               <FormControl>
                 <Input
                   {...field}
+                  placeholder="Name"
                   className="h-12 border-muted bg-transparent text-muted"
                 />
               </FormControl>
@@ -89,10 +90,11 @@ const CustomerDetails: FC<CustomerDetailsProps> = ({
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-muted">Your Email</FormLabel>
+              <FormLabel className="text-muted">Email</FormLabel>
               <FormControl>
                 <Input
                   {...field}
+                  placeholder="Email"
                   type="email"
                   className="h-12 border-muted bg-transparent text-muted"
                 />
@@ -111,6 +113,7 @@ const CustomerDetails: FC<CustomerDetailsProps> = ({
               <FormControl>
                 <Input
                   {...field}
+                  placeholder="Phone"
                   type="tel"
                   className="h-12 border-muted bg-transparent text-muted"
                 />

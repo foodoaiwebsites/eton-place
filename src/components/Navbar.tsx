@@ -75,8 +75,8 @@ const Navbar = ({
               href={"/menu"}
               className={
                 pathname === "/" || pathname === "/table-booking"
-                  ? "fon6-[400] pt-4 text-center font-manrope text-sm uppercase tracking-[2px] text-[#ffff]"
-                  : "fon6-[400] pt-4 text-center font-manrope text-sm uppercase tracking-[2px] text-[#fff]"
+                  ? "pt-4 text-center font-manrope text-sm font-[600] uppercase tracking-[2px] text-[#ffff]"
+                  : "pt-4 text-center font-manrope text-sm font-[600] uppercase tracking-[2px] text-[#fff]"
               }
             >
               Menu
@@ -86,8 +86,8 @@ const Navbar = ({
               href={"/about-us"}
               className={
                 pathname === "/" || pathname === "/table-booking"
-                  ? "fon6-[400] pt-4 text-center font-manrope text-sm uppercase tracking-[2px] text-[#ffff]"
-                  : "fon6-[400] pt-4 text-center font-manrope text-sm uppercase tracking-[2px] text-[#fff]"
+                  ? "pt-4 text-center font-manrope text-sm font-[600] uppercase tracking-[2px] text-[#ffff]"
+                  : "pt-4 text-center font-manrope text-sm font-[600] uppercase tracking-[2px] text-[#fff]"
               }
             >
               Our Story

@@ -18,7 +18,7 @@ const Follow: React.FC = () => {
             className="pb-16 text-center font-oswald text-4xl font-[400] capitalize md:text-6xl"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 1.5, ease: "easeOut" }}
             style={{
               background:
@@ -40,7 +40,7 @@ const Follow: React.FC = () => {
                 className="h-[300px] w-full object-cover md:h-[350px]"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
               />
             </div>
@@ -48,7 +48,7 @@ const Follow: React.FC = () => {
               className="z-40 flex w-full flex-col items-center justify-center gap-2 md:mt-16 md:w-[25%]"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 1.5, ease: "easeOut" }}
             >
               {" "}
@@ -70,7 +70,7 @@ const Follow: React.FC = () => {
                   target="_blank"
                   className="text-md text-center font-open_sans font-[400] uppercase text-[#E2B583] md:text-xl"
                 >
-                  @etonplace
+                  @etonplacewoolton
                 </Link>
               </div>
             </motion.div>
@@ -84,7 +84,7 @@ const Follow: React.FC = () => {
                 className="h-[300px] w-full object-cover md:h-[350px]"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
               />
             </div>
@@ -98,7 +98,7 @@ const Follow: React.FC = () => {
                 className="h-[300px] w-full object-cover md:h-[350px]"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
               />
             </div>
@@ -114,7 +114,7 @@ const Follow: React.FC = () => {
                 className="h-[300px] w-full object-cover md:h-[350px]"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
               />
             </div>
@@ -128,7 +128,7 @@ const Follow: React.FC = () => {
                 className="h-[300px] w-full object-cover md:h-[350px]"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
               />
             </div>
@@ -143,7 +143,7 @@ const Follow: React.FC = () => {
                 className="z-0 h-[300px] w-full object-cover md:h-[350px]"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
               />
             </div>
@@ -157,7 +157,7 @@ const Follow: React.FC = () => {
             className="pb-10 text-center font-oswald text-4xl font-[400] capitalize md:text-6xl"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 1.5, ease: "easeOut" }}
             style={{
               background:
@@ -179,7 +179,7 @@ const Follow: React.FC = () => {
                 className="h-[200px] w-full object-cover md:h-full"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
               />
             </div>
@@ -187,7 +187,7 @@ const Follow: React.FC = () => {
               className="z-40 flex w-full flex-col items-center justify-center gap-2 md:mt-16 md:w-[25%]"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 1.5, ease: "easeOut" }}
             >
               {" "}
@@ -209,7 +209,7 @@ const Follow: React.FC = () => {
                   target="_blank"
                   className="text-md text-center font-open_sans font-[400] uppercase text-[#E2B583] md:text-xl"
                 >
-                  @rokabolton
+                  @etonplacewoolton
                 </Link>
               </div>
             </motion.div>
@@ -223,7 +223,7 @@ const Follow: React.FC = () => {
                 className="h-[200px] w-full object-cover md:h-full"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
               />
             </div>
@@ -237,7 +237,7 @@ const Follow: React.FC = () => {
                 className="h-[200px] w-full object-cover md:h-full"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
               />
             </div>
@@ -253,7 +253,7 @@ const Follow: React.FC = () => {
                 className="h-[200px] w-full object-cover md:h-full"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
               />
             </div>
@@ -267,7 +267,7 @@ const Follow: React.FC = () => {
                 className="h-[200px] w-full object-cover md:h-full"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
               />
             </div> */}
@@ -282,7 +282,7 @@ const Follow: React.FC = () => {
                 className="z-0 h-[200px] w-full object-cover md:h-full"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
               />
             </div>

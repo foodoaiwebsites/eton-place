@@ -102,12 +102,12 @@
   --menubackground: 0, 0%, 0%;
   --menuforeground: 0, 0%, 0%;
   --menuprimary: 42.29, 51.22%, 59.8%;
-  --menusecondary: 42.29, 51.22%, 59.8%;
+  --menusecondary: 0, 0%, 100%;
   --buttonhover: 41.51, 62.39%, 54.12%;
   --itembackground: 0, 0%, 10%;
   --menuprimaryforeground: 39, 100%, 93%;
-  --menusecondaryforeground: 42.29, 51.22%, 59.8%;
-  --itemdescription: 42.29, 51.22%, 59.8%;
+  --menusecondaryforeground: 0, 0%, 100%;
+  --itemdescription: 0, 0%, 100%;
   --itembutton: 37, 36%, 65%;
   --buttondisabled: 0, 0%, 29%;
   --mobilebg: 0, 0%, 0%;

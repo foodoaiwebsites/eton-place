@@ -21,15 +21,17 @@ const Sidebar: FC<SidebarProps> = ({ children }) => {
       <SheetContent className="w-[300px] sm:w-[540px]">
         <SheetHeader>
           <SheetTitle>
-            <Image
-              src="/images/logo.png"
-              width={162}
-              height={35}
-              alt="Foodo"
-              className="w-24"
-            />
+            <div className="flex justify-center">
+              <Image
+                src="/images/logo.png"
+                width={162}
+                height={35}
+                alt="Foodo"
+                className="w-32"
+              />
+            </div>
           </SheetTitle>
-          <SheetDescription className="flex w-full flex-col items-center justify-center gap-7 pt-14">
+          <SheetDescription className="flex w-full flex-col items-center justify-center gap-7 pt-10">
             <Link
               href="/"
               className="flex w-full justify-center p-0 text-center font-times_new_roman text-3xl font-normal text-white"
